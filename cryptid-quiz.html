@@ -19,60 +19,23 @@
     border-radius: 12px;
     box-shadow: 0 0 10px rgba(0,0,0,0.05);
   }
-  h1.quiz-title {
-    font-size: 2rem;
-    margin-bottom: .5rem;
-    text-align: center;
-  }
-  .quiz-intro {
-    opacity: .8;
-    margin-bottom: 1.5rem;
-    text-align: center;
-  }
-  .quiz-questions li {
-    margin: 1rem 0;
-    list-style: none;
-  }
-  .quiz-questions strong {
-    display: block;
-    margin-bottom: .25rem;
-  }
-  .quiz-questions label {
-    display: block;
-    margin: .35rem 0;
-    cursor: pointer;
-  }
+  h1.quiz-title { font-size: 2rem; margin-bottom: .5rem; text-align: center; }
+  .quiz-intro { opacity: .8; margin-bottom: 1.5rem; text-align: center; }
+  .quiz-questions li { margin: 1rem 0; list-style: none; }
+  .quiz-questions strong { display: block; margin-bottom: .25rem; }
+  .quiz-questions label { display: block; margin: .35rem 0; cursor: pointer; }
   .quiz-submit {
-    margin-top: 1.5rem;
-    padding: .75rem 1rem;
-    border: 0;
-    border-radius: .5rem;
-    cursor: pointer;
-    background: #111;
-    color: #fff;
-    font-size: 1rem;
+    margin-top: 1.5rem; padding: .75rem 1rem; border: 0; border-radius: .5rem;
+    cursor: pointer; background: #111; color: #fff; font-size: 1rem;
   }
-  .quiz-submit:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-  }
+  .quiz-submit:disabled { opacity: .4; cursor: not-allowed; }
   .quiz-result {
-    display: none;
-    margin-top: 2rem;
-    padding: 1rem;
-    border: 1px solid #eee;
-    border-radius: .5rem;
-    background: #fafafa;
-    text-align: center;
+    display: none; margin-top: 2rem; padding: 1rem;
+    border: 1px solid #eee; border-radius: .5rem; background: #fafafa; text-align: center;
   }
   .result-cta {
-    display: none; /* hidden by default; only shown if CTA exists */
-    margin-top: .75rem;
-    text-decoration: none;
-    padding: .6rem .9rem;
-    border: 1px solid #111;
-    border-radius: .5rem;
-    color: #111;
+    display: none; margin-top: .75rem; text-decoration: none; padding: .6rem .9rem;
+    border: 1px solid #111; border-radius: .5rem; color: #111;
   }
 </style>
 </head>
@@ -81,95 +44,9 @@
   <h1 class="quiz-title"></h1>
   <div class="quiz-intro"></div>
 
-  <script type="application/json" class="quiz-data">
-  {
-    "title": "Which Cryptid Are You?",
-    "intro": "Eight fast questions to reveal your inner cryptid. No email needed — see your result instantly.",
-    "questions": [
-      {
-        "q": "Pick a habitat:",
-        "answers": [
-          {"t": "Foggy forests", "score": {"wendigo": 1}},
-          {"t": "Abandoned towns", "score": {"mothman": 1}},
-          {"t": "Deep lakes", "score": {"loch": 1}},
-          {"t": "Mountain trails", "score": {"sas": 1}}
-        ]
-      },
-      {
-        "q": "Night skill check:",
-        "answers": [
-          {"t": "Silent tracking", "score": {"sas": 1}},
-          {"t": "Eerie warnings", "score": {"mothman": 1}},
-          {"t": "Endless stamina", "score": {"wendigo": 1}},
-          {"t": "Perfect camouflage", "score": {"loch": 1}}
-        ]
-      },
-      {
-        "q": "Choose a calling card:",
-        "answers": [
-          {"t": "Footprints", "score": {"sas": 1}},
-          {"t": "Red eyes in the dark", "score": {"mothman": 1}},
-          {"t": "Icy breath", "score": {"wendigo": 1}},
-          {"t": "Ripple on still water", "score": {"loch": 1}}
-        ]
-      },
-      {
-        "q": "Your vibe:",
-        "answers": [
-          {"t": "Mysterious", "score": {"mothman": 1}},
-          {"t": "Patient", "score": {"loch": 1}},
-          {"t": "Relentless", "score": {"wendigo": 1}},
-          {"t": "Grounded", "score": {"sas": 1}}
-        ]
-      },
-      {
-        "q": "Pick a soundtrack:",
-        "answers": [
-          {"t": "Distant drones", "score": {"mothman": 1}},
-          {"t": "Low strings", "score": {"loch": 1}},
-          {"t": "Tribal drums", "score": {"sas": 1}},
-          {"t": "Howling wind", "score": {"wendigo": 1}}
-        ]
-      },
-      {
-        "q": "Weapon of choice:",
-        "answers": [
-          {"t": "Stealth", "score": {"loch": 1}},
-          {"t": "Warning signs", "score": {"mothman": 1}},
-          {"t": "Raw power", "score": {"sas": 1}},
-          {"t": "Cold endurance", "score": {"wendigo": 1}}
-        ]
-      },
-      {
-        "q": "Best time of day:",
-        "answers": [
-          {"t": "Deep night", "score": {"mothman": 1}},
-          {"t": "Dawn mist", "score": {"loch": 1}},
-          {"t": "Midday trek", "score": {"sas": 1}},
-          {"t": "Snowy twilight", "score": {"wendigo": 1}}
-        ]
-      },
-      {
-        "q": "Choose a companion:",
-        "answers": [
-          {"t": "Owl", "score": {"mothman": 1}},
-          {"t": "Otter", "score": {"loch": 1}},
-          {"t": "Wolf", "score": {"wendigo": 1}},
-          {"t": "Bear", "score": {"sas": 1}}
-        ]
-      }
-    ],
-    "results": {
-      "wendigo": {"name": "Wendigo", "desc": "Feral focus, winter soul, relentless drive."},
-      "mothman": {"name": "Mothman", "desc": "Omen of virality — mysterious but magnetic."},
-      "loch": {"name": "Loch Legend", "desc": "Calm, deep, timeless — quiet power grows."},
-      "sas": {"name": "Sasquatch", "desc": "Grounded, unstoppable, a gentle giant."}
-    }
-  }
-  </script>
-
   <ol class="quiz-questions"></ol>
   <button class="quiz-submit" disabled>See My Result</button>
+
   <div class="quiz-result">
     <h2 class="result-title"></h2>
     <p class="result-desc"></p>
@@ -178,9 +55,72 @@
 </div>
 
 <script>
+/* ---- QUIZ DATA (no JSON parsing; robust everywhere) ---- */
+const QUIZ_DATA = {
+  title: "Which Cryptid Are You?",
+  intro: "Eight fast questions to reveal your inner cryptid. No email needed — see your result instantly.",
+  questions: [
+    { q: "Pick a habitat:", answers: [
+      { t: "Foggy forests",      score: { wendigo: 1 } },
+      { t: "Abandoned towns",    score: { mothman: 1 } },
+      { t: "Deep lakes",         score: { loch: 1 } },
+      { t: "Mountain trails",    score: { sas: 1 } }
+    ]},
+    { q: "Night skill check:", answers: [
+      { t: "Silent tracking",    score: { sas: 1 } },
+      { t: "Eerie warnings",     score: { mothman: 1 } },
+      { t: "Endless stamina",    score: { wendigo: 1 } },
+      { t: "Perfect camouflage", score: { loch: 1 } }
+    ]},
+    { q: "Choose a calling card:", answers: [
+      { t: "Footprints",         score: { sas: 1 } },
+      { t: "Red eyes in the dark", score: { mothman: 1 } },
+      { t: "Icy breath",         score: { wendigo: 1 } },
+      { t: "Ripple on still water", score: { loch: 1 } }
+    ]},
+    { q: "Your vibe:", answers: [
+      { t: "Mysterious",         score: { mothman: 1 } },
+      { t: "Patient",            score: { loch: 1 } },
+      { t: "Relentless",         score: { wendigo: 1 } },
+      { t: "Grounded",           score: { sas: 1 } }
+    ]},
+    { q: "Pick a soundtrack:", answers: [
+      { t: "Distant drones",     score: { mothman: 1 } },
+      { t: "Low strings",        score: { loch: 1 } },
+      { t: "Tribal drums",       score: { sas: 1 } },
+      { t: "Howling wind",       score: { wendigo: 1 } }
+    ]},
+    { q: "Weapon of choice:", answers: [
+      { t: "Stealth",            score: { loch: 1 } },
+      { t: "Warning signs",      score: { mothman: 1 } },
+      { t: "Raw power",          score: { sas: 1 } },
+      { t: "Cold endurance",     score: { wendigo: 1 } }
+    ]},
+    { q: "Best time of day:", answers: [
+      { t: "Deep night",         score: { mothman: 1 } },
+      { t: "Dawn mist",          score: { loch: 1 } },
+      { t: "Midday trek",        score: { sas: 1 } },
+      { t: "Snowy twilight",     score: { wendigo: 1 } }
+    ]},
+    { q: "Choose a companion:", answers: [
+      { t: "Owl",                score: { mothman: 1 } },
+      { t: "Otter",              score: { loch: 1 } },
+      { t: "Wolf",               score: { wendigo: 1 } },
+      { t: "Bear",               score: { sas: 1 } }
+    ]}
+  ],
+  results: {
+    wendigo: { name: "Wendigo",    desc: "Feral focus, winter soul, relentless drive." },
+    mothman: { name: "Mothman",    desc: "Omen of virality — mysterious but magnetic." },
+    loch:    { name: "Loch Legend",desc: "Calm, deep, timeless — quiet power grows." },
+    sas:     { name: "Sasquatch",  desc: "Grounded, unstoppable, a gentle giant." }
+  }
+};
+
+/* ---- RENDER + LOGIC ---- */
 (function(){
   const root = document.querySelector('.quiz-container');
-  const data = JSON.parse(root.querySelector('.quiz-data').textContent);
+  const data = QUIZ_DATA;
 
   root.querySelector('.quiz-title').textContent = data.title;
   root.querySelector('.quiz-intro').textContent = data.intro;
