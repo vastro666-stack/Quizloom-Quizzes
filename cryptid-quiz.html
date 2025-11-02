@@ -22,10 +22,12 @@
   h1.quiz-title {
     font-size: 2rem;
     margin-bottom: .5rem;
+    text-align: center;
   }
   .quiz-intro {
     opacity: .8;
     margin-bottom: 1.5rem;
+    text-align: center;
   }
   .quiz-questions li {
     margin: 1rem 0;
@@ -61,14 +63,16 @@
     border: 1px solid #eee;
     border-radius: .5rem;
     background: #fafafa;
+    text-align: center;
   }
   .result-cta {
-    display: inline-block;
+    display: none; /* hidden by default; only shown if CTA exists */
     margin-top: .75rem;
     text-decoration: none;
     padding: .6rem .9rem;
     border: 1px solid #111;
     border-radius: .5rem;
+    color: #111;
   }
 </style>
 </head>
@@ -82,60 +86,84 @@
     "title": "Which Cryptid Are You?",
     "intro": "Eight fast questions to reveal your inner cryptid. No email needed — see your result instantly.",
     "questions": [
-      {"q":"Pick a habitat:","answers":[
-        {"t":"Foggy forests","score":{"wendigo":1}},
-        {"t":"Abandoned towns","score":{"mothman":1}},
-        {"t":"Deep lakes","score":{"loch":1}},
-        {"t":"Mountain trails","score":{"sas":1}}
-      ]},
-      {"q":"Night skill check:","answers":[
-        {"t":"Silent tracking","score":{"sas":1}},
-        {"t":"Eerie warnings","score":{"mothman":1}},
-        {"t":"Endless stamina","score":{"wendigo":1}},
-        {"t":"Perfect camouflage","score":{"loch":1}}
-      ]},
-      {"q":"Choose a calling card:","answers":[
-        {"t":"Footprints","score":{"sas":1}},
-        {"t":"Red eyes in the dark","score":{"mothman":1}},
-        {"t":"Icy breath","score":{"wendigo":1}},
-        {"t":"Ripple on still water","score":{"loch":1}}
-      ]},
-      {"q":"Your vibe:","answers":[
-        {"t":"Mysterious","score":{"mothman":1}},
-        {"t":"Patient","score":{"loch":1}},
-        {"t":"Relentless","score":{"wendigo":1}},
-        {"t":"Grounded","score":{"sas":1}}
-      ]},
-      {"q":"Pick a soundtrack:","answers":[
-        {"t":"Distant drones","score":{"mothman":1}},
-        {"t":"Low strings","score":{"loch":1}},
-        {"t":"Tribal drums","score":{"sas":1}},
-        {"t":"Howling wind","score":{"wendigo":1}}
-      ]},
-      {"q":"Weapon of choice:","answers":[
-        {"t":"Stealth","score":{"loch":1}},
-        {"t":"Warning signs","score":{"mothman":1}},
-        {"t":"Raw power","score":{"sas":1}},
-        {"t":"Cold endurance","score":{"wendigo":1}}
-      ]},
-      {"q":"Best time of day:","answers":[
-        {"t":"Deep night","score":{"mothman":1}},
-        {"t":"Dawn mist","score":{"loch":1}},
-        {"t":"Midday trek","score":{"sas":1}},
-        {"t":"Snowy twilight","score":{"wendigo":1}}
-      ]},
-      {"q":"Choose a companion:","answers":[
-        {"t":"Owl","score":{"mothman":1}},
-        {"t":"Otter","score":{"loch":1}},
-        {"t":"Wolf","score":{"wendigo":1}},
-        {"t":"Bear","score":{"sas":1}}
-      ]}
+      {
+        "q": "Pick a habitat:",
+        "answers": [
+          {"t": "Foggy forests", "score": {"wendigo": 1}},
+          {"t": "Abandoned towns", "score": {"mothman": 1}},
+          {"t": "Deep lakes", "score": {"loch": 1}},
+          {"t": "Mountain trails", "score": {"sas": 1}}
+        ]
+      },
+      {
+        "q": "Night skill check:",
+        "answers": [
+          {"t": "Silent tracking", "score": {"sas": 1}},
+          {"t": "Eerie warnings", "score": {"mothman": 1}},
+          {"t": "Endless stamina", "score": {"wendigo": 1}},
+          {"t": "Perfect camouflage", "score": {"loch": 1}}
+        ]
+      },
+      {
+        "q": "Choose a calling card:",
+        "answers": [
+          {"t": "Footprints", "score": {"sas": 1}},
+          {"t": "Red eyes in the dark", "score": {"mothman": 1}},
+          {"t": "Icy breath", "score": {"wendigo": 1}},
+          {"t": "Ripple on still water", "score": {"loch": 1}}
+        ]
+      },
+      {
+        "q": "Your vibe:",
+        "answers": [
+          {"t": "Mysterious", "score": {"mothman": 1}},
+          {"t": "Patient", "score": {"loch": 1}},
+          {"t": "Relentless", "score": {"wendigo": 1}},
+          {"t": "Grounded", "score": {"sas": 1}}
+        ]
+      },
+      {
+        "q": "Pick a soundtrack:",
+        "answers": [
+          {"t": "Distant drones", "score": {"mothman": 1}},
+          {"t": "Low strings", "score": {"loch": 1}},
+          {"t": "Tribal drums", "score": {"sas": 1}},
+          {"t": "Howling wind", "score": {"wendigo": 1}}
+        ]
+      },
+      {
+        "q": "Weapon of choice:",
+        "answers": [
+          {"t": "Stealth", "score": {"loch": 1}},
+          {"t": "Warning signs", "score": {"mothman": 1}},
+          {"t": "Raw power", "score": {"sas": 1}},
+          {"t": "Cold endurance", "score": {"wendigo": 1}}
+        ]
+      },
+      {
+        "q": "Best time of day:",
+        "answers": [
+          {"t": "Deep night", "score": {"mothman": 1}},
+          {"t": "Dawn mist", "score": {"loch": 1}},
+          {"t": "Midday trek", "score": {"sas": 1}},
+          {"t": "Snowy twilight", "score": {"wendigo": 1}}
+        ]
+      },
+      {
+        "q": "Choose a companion:",
+        "answers": [
+          {"t": "Owl", "score": {"mothman": 1}},
+          {"t": "Otter", "score": {"loch": 1}},
+          {"t": "Wolf", "score": {"wendigo": 1}},
+          {"t": "Bear", "score": {"sas": 1}}
+        ]
+      }
     ],
     "results": {
-      "wendigo":{"name":"Wendigo","desc":"Feral focus, winter soul, relentless drive.",
-      "mothman":{"name":"Mothman","desc":"Omen of virality — mysterious but magnetic.",
-      "loch":{"name":"Loch Legend","desc":"Calm, deep, timeless — quiet power grows.",
-      "sas":{"name":"Sasquatch","desc":"Grounded, unstoppable, a gentle giant.",
+      "wendigo": {"name": "Wendigo", "desc": "Feral focus, winter soul, relentless drive."},
+      "mothman": {"name": "Mothman", "desc": "Omen of virality — mysterious but magnetic."},
+      "loch": {"name": "Loch Legend", "desc": "Calm, deep, timeless — quiet power grows."},
+      "sas": {"name": "Sasquatch", "desc": "Grounded, unstoppable, a gentle giant."}
     }
   }
   </script>
@@ -151,43 +179,58 @@
 
 <script>
 (function(){
-  const root=document.querySelector('.quiz-container');
-  const data=JSON.parse(root.querySelector('.quiz-data').textContent);
-  root.querySelector('.quiz-title').textContent=data.title;
-  root.querySelector('.quiz-intro').textContent=data.intro;
-  const qWrap=root.querySelector('.quiz-questions');
-  data.questions.forEach((q,qi)=>{
-    const li=document.createElement('li');
-    li.innerHTML=`<strong>${qi+1}. ${q.q}</strong>`;
-    q.answers.forEach(a=>{
-      const label=document.createElement('label');
-      label.innerHTML=`<input type="radio" name="q${qi}" value='${JSON.stringify(a.score)}'> ${a.t}`;
+  const root = document.querySelector('.quiz-container');
+  const data = JSON.parse(root.querySelector('.quiz-data').textContent);
+
+  root.querySelector('.quiz-title').textContent = data.title;
+  root.querySelector('.quiz-intro').textContent = data.intro;
+
+  const qWrap = root.querySelector('.quiz-questions');
+  data.questions.forEach((q, qi) => {
+    const li = document.createElement('li');
+    li.innerHTML = `<strong>${qi + 1}. ${q.q}</strong>`;
+    q.answers.forEach(a => {
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${qi}" value='${JSON.stringify(a.score)}'> ${a.t}`;
       li.appendChild(label);
     });
     qWrap.appendChild(li);
   });
-  const btn=root.querySelector('.quiz-submit');
-  const total=data.questions.length;
-  root.addEventListener('change',()=>{
-    const answered=new Set([...root.querySelectorAll('input[type=radio]:checked')].map(i=>i.name));
-    btn.disabled=answered.size!==total;
+
+  const btn = root.querySelector('.quiz-submit');
+  const total = data.questions.length;
+
+  root.addEventListener('change', () => {
+    const answered = new Set([...root.querySelectorAll('input[type=radio]:checked')].map(i => i.name));
+    btn.disabled = answered.size !== total;
   });
-  btn.addEventListener('click',()=>{
-    const checked=root.querySelectorAll('input[type=radio]:checked');
-    const tally={};
-    checked.forEach(i=>{
-      const scores=JSON.parse(i.value);
-      Object.entries(scores).forEach(([k,v])=>{tally[k]=(tally[k]||0)+Number(v);});
+
+  btn.addEventListener('click', () => {
+    const checked = root.querySelectorAll('input[type=radio]:checked');
+    const tally = {};
+    checked.forEach(i => {
+      const scores = JSON.parse(i.value);
+      Object.entries(scores).forEach(([k, v]) => { tally[k] = (tally[k] || 0) + Number(v); });
     });
-    const top=Object.entries(tally).sort((a,b)=>b[1]-a[1])[0][0];
-    const r=data.results[top];
-    root.querySelector('.result-title').textContent=r.name;
-    root.querySelector('.result-desc').textContent=r.desc;
-    const cta=root.querySelector('.result-cta');
-    cta.textContent=r.cta.label; 
-    cta.href=r.cta.url;
-    root.querySelector('.quiz-result').style.display='block';
-    root.querySelector('.quiz-result').scrollIntoView({behavior:'smooth',block:'center'});
+
+    const top = Object.entries(tally).sort((a,b) => b[1] - a[1])[0][0];
+    const r = data.results[top];
+
+    root.querySelector('.result-title').textContent = r.name;
+    root.querySelector('.result-desc').textContent  = r.desc;
+
+    const cta = root.querySelector('.result-cta');
+    if (r.cta && r.cta.label && r.cta.url) {
+      cta.textContent = r.cta.label;
+      cta.href = r.cta.url;
+      cta.style.display = 'inline-block';
+    } else {
+      cta.style.display = 'none';
+    }
+
+    const resultBox = root.querySelector('.quiz-result');
+    resultBox.style.display = 'block';
+    resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
   });
 })();
 </script>
